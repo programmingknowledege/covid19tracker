@@ -32,9 +32,9 @@ def home():
                     confirmedd = confirmedd + dataa["confirmed"]
                     activee = activee + dataa["active"]
                     recoveredd = recoveredd + dataa["recovered"]
-                listconfirmed.append(confirmedd)
-                listactive.append(activee)
-                listrecovered.append(recoveredd)
+                listconfirmed.append(int(confirmedd))
+                listactive.append(int(activee))
+                listrecovered.append(int(recoveredd))
     return render_template("DisplayData.html", confirmed=confirmed, active=active, recovered=recovered, liststates=liststates,
                            listconfirmed=listconfirmed, listactive=listactive, listrecovered=listrecovered,n=len(liststates))
 
