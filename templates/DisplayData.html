@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #8A2BE2">
+<br>
+<br>
+<div class="container-fluid" >
+    <div align="center"  class="text-danger" >
+    	<p style="display: inline;margin: 0;color: #FFFFFF;font-size: 35px">COVID-19</p>
+    	<p style="display: inline;margin: 0;color: #0000A0;font-size: 35px">INDIA</p></div>
+</div>
+<br>
+<br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-1">&nbsp</div>
+		<div class="col-sm-3">
+            <div class="card" style="width: 18rem; border: 1px solid black;background-color: #FFFFFF;" >
+			    <div class="card-body">
+			        <h5 class="card-title" align="center" style="font-size: 25px;color: #FF0000 ">Confirmed <br> Cases</h5>
+			        <p class="card-text" align="center"  style="font-size: 20px;color:  #FF0000">{{confirmed}}</p>
+			    </div>
+			</div>
+		</div>
+		<div class="col-sm-1">&nbsp</div>
+		<div class="col-sm-3">
+            <div class="card" style="width: 18rem;border: 1px solid black;background-color: #FFFFFF;">
+			    <div class="card-body">
+			        <h5 class="card-title" align="center" style="font-size: 25px;color: #0000FF">Active <br> Cases</h5>
+			        <p class="card-text" align="center"  style="font-size: 20px;color: #0000FF">{{active}}</p>
+
+			    </div>
+			</div>
+		</div>
+		<div class="col-sm-1">&nbsp</div>
+		<div class="col-sm-3">
+            <div class="card" style="width: 18rem;border: 1px solid black;background-color: #FFFFFF;">
+			    <div class="card-body">
+			        <h5 class="card-title" align="center" style="font-size: 25px;color: #009900">Recovered <br> Cases</h5>
+			        <p class="card-text" align="center"  style="font-size: 20px;color: #009900">{{recovered}}</p>
+			    </div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+<br>
+<br>
+<p align="center" style="font-size: 30px">State wise COVID19 Data </p>
+<div class="container-fluid" class="table-responsive">
+  <table class="table table-hover table-bordered ">
+    <thead>
+      <tr>
+        <th>State</th>
+        <th style="color:  #FF0000">Confirmed</th>
+        <th style="color: #0000FF">Active</th>
+        <th style="color: #009900">Recovered</th>
+      </tr>
+    </thead>
+    <tbody>
+    	{% for i in range(0,n)%}
+    	<tr>
+	       <td>{{liststates[i]}}</td>
+	       <td>{{listconfirmed[i]}}</td>
+	       <td>{{listactive[i]}}</td>
+	       <td>{{listrecovered[i]}}</td>
+	    <tr>
+	    {% endfor %}
+    </tbody>
+
+</div>
+
+
+
+</body>
+</html>
