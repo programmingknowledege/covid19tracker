@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>COVID19</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-	<script>
+</head>
+<script type="text/javascript">
 	function myFunction() {
 	  var input, filter, table, tr, td, i, txtValue;
 	  input = document.getElementById("myInput");
@@ -38,8 +38,7 @@
 	  document.getElementById("mySidenav").style.width = "0";
 	  document.getElementById("main").style.marginLeft= "0";
 	}
-	</script>
-</head>
+</script>
 <body style="background-color: #8A2BE2">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -50,9 +49,9 @@
 </div>
 
 <div id="main">
-  
+
   <span style="font-size:22px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-</div>	
+</div>		
 
 
 <div class="container-fluid" >
@@ -63,12 +62,11 @@
 <br>
 
 
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-1">&nbsp</div>
 		<div class="col-sm-3">
-            <div class="card" style="width:250px; border: 1px solid black;background-color: #FFFFFF;" >
+            <div class="card" style="width: 250px; border: 1px solid black;background-color: #FFFFFF;" >
 			    <div class="card-body">
 			        <h5 class="card-title" align="center" style="font-size: 20px;color: #FF0000 ">Confirmed <br> Cases</h5>
 			        <p class="card-text" align="center"  style="font-size: 15px;color:  #FF0000">{{confirmed}}</p>
@@ -100,38 +98,36 @@
 </div>
 <br>
 <br>
-<p align="center" style="font-size: 15px">State wise COVID19 Data </p>
-
+<p align="center" style="font-size: 20px">District wise COVID19 Data </p>
 <div class="container-fluid" class="table-responsive">
 	<div class="form-group">
 
-		<input type="text" class="form-control"  placeholder="Search state name..." id="myInput" onkeyup="myFunction()">
+		<input type="text" class="form-control"  placeholder="Search distrct name..." id="myInput" onkeyup="myFunction()">
 	</div>
 
   <table class="table table-hover table-bordered table-dark" id="myTable">
     <thead>
       <tr>
-        <th style="font-size: 13px">States</th>
+        <th style="font-size: 13px">Districts</th>
         <th style="color:  #FF0000;font-size: 13px">Confirmed</th>
         <th style="color: #0000FF;font-size: 13px">Active</th>
         <th style="color: #009900;font-size: 13px">Recovered</th>
       </tr>
     </thead>
-    <tbody>
+	<tbody>
     	{% for i in range(0,n)%}
     	<tr>
-	       <td style="font-size: 10px">{{liststates[i]}}</td>
+	       <td style="font-size: 10px">{{listdistrict[i]}}</td>
 	       <td style="font-size: 10px">{{listconfirmed[i]}}</td>
 	       <td style="font-size: 10px">{{listactive[i]}}</td>
 	       <td style="font-size: 10px">{{listrecovered[i]}}</td>
 	    <tr>
 	    {% endfor %}
     </tbody>
+    
   </table>
 
 </div>
-
-
 
 </body>
 </html>
